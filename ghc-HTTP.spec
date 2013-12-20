@@ -94,12 +94,12 @@ Biblioteka profilująca %{pkgname} dla GHC. Powinna być zainstalowana
 kiedy potrzebujemy systemu profilującego z GHC.
 
 %package doc
-Summary:	HTML documentation for %{pkgname} ghc package
+Summary:	HTML documentation for ghc %{pkgname} package
 Summary(pl.UTF-8):	Dokumentacja w formacie HTML dla pakietu ghc %{pkgname}
 Group:		Documentation
 
 %description doc
-HTML documentation for %{pkgname} ghc package.
+HTML documentation for ghc %{pkgname} package.
 
 %description doc -l pl.UTF-8
 Dokumentacja w formacie HTML dla pakietu ghc %{pkgname}.
@@ -127,7 +127,7 @@ runhaskell Setup.lhs copy --destdir=$RPM_BUILD_ROOT
 # work around automatic haddock docs installation
 %{__rm} -rf %{name}-%{version}-doc
 cp -a $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version} %{name}-%{version}-doc
-%{__rm} -rf $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
+%{__rm} -r $RPM_BUILD_ROOT%{_docdir}/%{name}-%{version}
 
 runhaskell Setup.lhs register \
 	--gen-pkg-config=$RPM_BUILD_ROOT%{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
