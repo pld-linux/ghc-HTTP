@@ -1,0 +1,14 @@
+Only in HTTP-4000.3.14-ghc8.10: dist
+Only in HTTP-4000.3.14-ghc8.10: ghc-HTTP-4000.3.14-doc
+diff -ur HTTP-4000.3.14/HTTP.cabal HTTP-4000.3.14-ghc8.10/HTTP.cabal
+--- HTTP-4000.3.14/HTTP.cabal	2019-06-17 23:33:27.000000000 +0200
++++ HTTP-4000.3.14-ghc8.10/HTTP.cabal	2020-05-26 23:44:03.036472561 +0200
+@@ -109,7 +109,7 @@
+ 
+   -- note the test harness constraints should be kept in sync with these
+   -- where dependencies are shared
+-  Build-depends: base >= 4.3.0.0 && < 4.14, parsec >= 2.0 && < 3.2
++  Build-depends: base >= 4.3.0.0, parsec >= 2.0 && < 3.2
+   Build-depends: array >= 0.3.0.2 && < 0.6, bytestring >= 0.9.1.5 && < 0.11
+   Build-depends: time >= 1.1.2.3 && < 1.10
+ 
