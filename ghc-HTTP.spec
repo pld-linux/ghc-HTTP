@@ -7,7 +7,7 @@ Summary:	A library for client-side HTTP
 Summary(pl.UTF-8):	Biblioteka kliencka HTTP
 Name:		ghc-%{pkgname}
 Version:	4000.3.14
-Release:	1
+Release:	2
 License:	BSD
 Group:		Development/Languages
 #Source0Download: http://hackage.haskell.org/package/HTTP
