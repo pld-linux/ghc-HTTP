@@ -15,34 +15,44 @@ Source0:	http://hackage.haskell.org/package/%{pkgname}-%{version}/%{pkgname}-%{v
 # Source0-md5:	a2e340760c318658313f1548c91e2692
 Patch0:		ghc-8.10.patch
 URL:		http://hackage.haskell.org/package/HTTP
-BuildRequires:	ghc >= 6.12.3
-BuildRequires:	ghc-array
-BuildRequires:	ghc-base >= 3
-BuildRequires:	ghc-bytestring
+BuildRequires:	ghc >= 7.0.1
+BuildRequires:	ghc-array >= 0.3.0.2
+BuildRequires:	ghc-array < 0.6
+BuildRequires:	ghc-base >= 4.3
+BuildRequires:	ghc-bytestring >= 0.9.1.5
+BuildRequires:	ghc-bytestring < 0.11
 BuildRequires:	ghc-mtl >= 2.0
-BuildRequires:	ghc-network
-BuildRequires:	ghc-network-uri
-BuildRequires:	ghc-parsec
+BuildRequires:	ghc-mtl < 2.3
+BuildRequires:	ghc-network >= 2.6
+BuildRequires:	ghc-network < 3.2
+BuildRequires:	ghc-network-uri >= 2.6
+BuildRequires:	ghc-network-uri < 2.7
+BuildRequires:	ghc-parsec >= 2.0
+BuildRequires:	ghc-parsec < 3.2
+BuildRequires:	ghc-time >= 1.1.2.3
+BuildRequires:	ghc-time < 1.10
 %if %{with prof}
-BuildRequires:	ghc-prof >= 6.12.3
-BuildRequires:	ghc-array-prof
+BuildRequires:	ghc-prof >= 7.0.1
+BuildRequires:	ghc-array-prof >= 0.3.0.2
 BuildRequires:	ghc-base-prof >= 3
-BuildRequires:	ghc-bytestring-prof
+BuildRequires:	ghc-bytestring-prof >= 0.9.1.5
 BuildRequires:	ghc-mtl-prof >= 2.0
 BuildRequires:	ghc-network-prof
 BuildRequires:	ghc-network-uri-prof
-BuildRequires:	ghc-parsec-prof
+BuildRequires:	ghc-parsec-prof >= 2.0
+BuildRequires:	ghc-time-prof >= 1.1.2.3
 %endif
 BuildRequires:	rpmbuild(macros) >= 1.608
 Requires(post,postun):	/usr/bin/ghc-pkg
 %requires_eq	ghc
-Requires:	ghc-array
-Requires:	ghc-base >= 3
-Requires:	ghc-bytestring
+Requires:	ghc-array >= 0.3.0.2
+Requires:	ghc-base >= 4.3
+Requires:	ghc-bytestring >= 0.9.1.5
 Requires:	ghc-mtl >= 2.0
-Requires:	ghc-network
-Requires:	ghc-network-uri
-Requires:	ghc-parsec
+Requires:	ghc-network >= 2.6
+Requires:	ghc-network-uri >= 2.6
+Requires:	ghc-parsec >= 2.0
+Requires:	ghc-time >= 1.1.2.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 # debuginfo is not useful for ghc
@@ -70,13 +80,14 @@ Summary:	Profiling %{pkgname} library for GHC
 Summary(pl.UTF-8):	Biblioteka profilująca %{pkgname} dla GHC
 Group:		Development/Libraries
 Requires:	%{name} = %{version}-%{release}
-Requires:	ghc-array-prof
-Requires:	ghc-base-prof >= 3
-Requires:	ghc-bytestring-prof
+Requires:	ghc-array-prof >= 0.3.0.2
+Requires:	ghc-base-prof >= 4.3
+Requires:	ghc-bytestring-prof >= 0.9.1.5
 Requires:	ghc-mtl-prof >= 2.0
-Requires:	ghc-network-prof
-Requires:	ghc-network-uri-prof
-Requires:	ghc-parsec-prof
+Requires:	ghc-network-prof >= 2.6
+Requires:	ghc-network-uri-prof >= 2.6
+Requires:	ghc-parsec-prof >= 2.0
+Requires:	ghc-time-prof >= 1.1.2.3
 
 %description prof
 Profiling %{pkgname} library for GHC. Should be installed when
