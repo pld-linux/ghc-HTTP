@@ -151,7 +151,7 @@ rm -rf $RPM_BUILD_ROOT
 %doc CHANGES LICENSE
 %{_libdir}/%{ghcdir}/package.conf.d/%{pkgname}.conf
 %dir %{_libdir}/%{ghcdir}/%{pkgname}-%{version}
-%{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSHTTP-%{version}-*.so
+%attr(755,root,root) %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSHTTP-%{version}-*.so
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSHTTP-%{version}-*.a
 %exclude %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/libHSHTTP-%{version}-*_p.a
 %{_libdir}/%{ghcdir}/%{pkgname}-%{version}/*.hi
